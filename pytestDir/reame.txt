@@ -1,0 +1,14 @@
+run all tests
+pytest
+
+run all test with logs
+pytest -s
+
+run only a test file
+pytest filename
+
+run a test inside the file
+pytest filename :: testMethodName
+
+run test suit inside a group
+pytest -m tagname(like smoke)

@@ -1,0 +1,11 @@
+[
+  "pytestDir/test_2Validation.py::test_thirdTest",
+  "pytestDir/test_LaunchBrowser.py::test_LaunchBrowser",
+  "pytestDir/test_LaunchBrowser.py::test_navigateUrlUsingPage[chromium]",
+  "pytestDir/test_Validation.py::test_initialCheck",
+  "pytestDir/test_Validation.py::test_second",
+  "testsFiles/test_loginTests.py::test_login_with_invalidCredentials[chromium]",
+  "testsFiles/test_loginTests.py::test_login_with_validCredentials[chromium-user_credentials0]",
+  "testsFiles/test_loginTests.py::test_login_with_validCredentials[chromium-user_credentials1]",
+  "testsFiles/test_placeOrderTest.py::test_PlaceOrderTest[chromium]"
+]
