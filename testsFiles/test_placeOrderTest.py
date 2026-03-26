@@ -2,6 +2,7 @@ from playwright.sync_api import Page, expect
 
 from pages.cartPage import CartPage
 from pages.loginPage import LoginPage
+from pages.orderConfirmationPage import OrderConfirmationPage
 from pages.paymentPage import PaymentPage
 from pages.productPage import ProductPage
 
@@ -25,7 +26,11 @@ def test_PlaceOrderTest(page:Page):
     totelItemsInCart = paymentpage.getQuantityVaule()
     assert totelItemsInCart==1
     paymentpage.enterCardDetails("4542 9931 9292 2293", "123", "Jay Kumar")
-    paymentpage.applyCoupon("rahulshettyacademy")
+    #paymentpage.applyCoupon("rahulshettyacademy")
+    expect(paymentpage.emailFieldlabel).to_have_text("jay.aurven@gmail.com")
+    paymentpage.addCountry("India")
+    paymentpage.placeOrder()
 
-
-
+    confirmationpage = OrderConfirmationPage(page)
+    orderid = confirmationpage.getOrderid()
+    print(orderid)

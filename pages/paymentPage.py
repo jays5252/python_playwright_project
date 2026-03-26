@@ -20,6 +20,8 @@ class PaymentPage:
         self.emailField = self.page.locator('[type="text"]').nth(5)
         self.selectCountry = self.page.locator('[placeholder="Select Country"]')
 
+        self.placeOrderButton = self.page.locator(".action__submit")
+
     def getQuantityVaule(self):
         quantityText = self.itemQuantity.text_content()
         match = re.search(r'\d+', quantityText)
@@ -38,3 +40,19 @@ class PaymentPage:
     def applyCoupon(self, couponCode:str):
         self.applyCouponField.fill(couponCode)
         self.applyCouponButton.click()
+        self.page.wait_for_load_state("load")
+        self.page.wait_for_timeout(3000)
+
+
+    def addCountry(self, countryNam:str):
+        self.selectCountry.press_sequentially(countryNam, timeout=2000)
+        countryList = self.page.locator('.ta-results button')
+        for i in range(countryList.count()):
+            countryName = countryList.nth(i).text_content()
+            country = countryName.lstrip()
+            if country==countryNam:
+                countryList.nth(i).click()
+                break
+
+    def placeOrder(self):
+        self.placeOrderButton.click()
