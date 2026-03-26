@@ -47,6 +47,7 @@ class PaymentPage:
     def addCountry(self, countryNam:str):
         self.selectCountry.press_sequentially(countryNam, timeout=2000)
         countryList = self.page.locator('.ta-results button')
+        countryList.first.wait_for(timeout=5000)
         for i in range(countryList.count()):
             countryName = countryList.nth(i).text_content()
             country = countryName.lstrip()
