@@ -2,6 +2,8 @@
   <dictionary name="project">
     <words>
       <w>cartpage</w>
+      <w>loginpage</w>
+      <w>paymentpage</w>
       <w>productpage</w>
     </words>
   </dictionary>
