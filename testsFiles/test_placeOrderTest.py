@@ -50,7 +50,7 @@ def test_PlaceOrderTest(page:Page):
     orderPage.navigateToOrderDetails(orderid)
 
     orderSummaryPage = OrderSummaryPage(page)
-    userCountry = orderSummaryPage.getCountryFromOrder()
+    userCountry = orderSummaryPage.getCountryFromOrder().rstrip()
     userEmail = orderSummaryPage.getEmailFromOrder()
     productName = orderSummaryPage.getProductName()
     productOrderId = orderSummaryPage.getOrderIdFromOrder()

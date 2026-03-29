@@ -1,4 +1,3 @@
 {
-  "testsFiles/test_loginTests.py::test_login_with_invalidCredentials[chromium]": true,
-  "testsFiles/test_placeOrderTest.py::test_PlaceOrderTest[chromium]": true
+  "testsFiles/test_loginTests.py::test_login_with_invalidCredentials[chromium]": true
 }
